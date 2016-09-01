@@ -1,0 +1,60 @@
+// task upper << {
+// 	String someString = 'mY_nAmE'
+// 	println "Original : "+someString
+// 	println "Upper Case : "+someString.toUpperCase()
+// 	// name = "this is name"
+// 	// println name
+// 	// println name.toUpperCase()
+// 	4.times { print "$it "}
+// }
+
+// task intor(dependsOn: upper) <<{
+// 	println "I'm Gradle"
+// }
+
+// 4.times { counter ->
+// 	task "task$counter" << {
+// 		println "Im task number $counter"
+// 	}
+// }
+
+// task0.dependsOn task2, task3
+/*task hello{
+	println "Hello World !"
+}*/
+/*apply plugin: "java"
+List<String> list = new ArraryList<String>()
+ext {
+    springVersion = "3.1.0.RELEASE"
+    emailNotification = "build@master.org"
+}
+
+sourceSets.all { ext.purpose = null }
+
+sourceSets {
+    main {
+        purpose = "production"
+    }
+    test {
+        purpose = "test"
+        }
+    plugin {
+        purpose = "production"
+    }
+
+    }
+
+    task printProperties << {
+        println springVersion
+        println emailNotification
+        sourceSets.matching { it.purpose == "production" }.each { println it.name }
+    }*/
+
+task(hello) <<{
+	println "hello !"
+}
+
+task(copy,type:Copy){
+	from(file('srcDir'))
+    into(buildDir)
+}
